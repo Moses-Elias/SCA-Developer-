@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Haven | Giving Hope</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="icon" type="images/png" href="images/hope strict logo.png">
+
+
+</head>
+<body>
+
+<!-- Navigation -->
+<header id="header">
+  <div class="container">
+    <div class="logo">
+      <a href="#hero" class="logo-link">
+        <img src="images/hope strict logo.png" alt="Hope Haven Logo" />
+        <span class="logo-text">Hope Haven</span>
+      </a>
+    </div>
+    <nav>
+      <button id="hamburger" aria-label="Open menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul id="nav-list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Hero Section -->
+<section id="hero" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 id="hero-title">Helping People Find <span>Hope & Home</span></h1>
+        <p id="hero-desc">Together, we build brighter futures for our community.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Volunteer Now</a>
+            <a href="#donate" class="btn btn-secondary">Donate</a>
+        </div>
+        <div class="slider-controls">
+            <span class="slider-dot active" data-index="0" aria-label="Slide 1"></span>
+            <span class="slider-dot" data-index="1" aria-label="Slide 2"></span>
+            <span class="slider-dot" data-index="2" aria-label="Slide 3"></span>
+            <span class="slider-dot" data-index="3" aria-label="Slide 4"></span>
+            <span class="slider-dot" data-index="4" aria-label="Slide 5"></span>
+        </div>
+    </div>
+</section>
+
+
+ <!-- About Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">About <span>Hope Haven</span></h2>
+                <p class="section-subtitle">
+                    At Hope Haven, we are dedicated to providing food, shelter, and unwavering support to those in need—helping them rebuild their lives with dignity and hope.
+                </p>
+                <p>
+                    We create a safe space where every person feels loved, valued, and empowered to call it home.
+                </p>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat-card">
+                    <h3 class="counter" data-target="15000">0</h3>
+                    <p>Meals Served</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="counter" data-target="800">0</h3>
+                    <p>Families Helped</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="counter" data-target="250">0</h3>
+                    <p>Volunteers Joined</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Stories Section -->
+   <section id="stories">
+    <div class="container">
+        <h2 class="animate__animated animate__fadeInDown">Success Stories</h2>
+        <div class="filters animate__animated animate__fadeInUp">
+            <button data-filter="all" class="active filter-chip">All</button>
+            <button data-filter="food" class="filter-chip">Food</button>
+            <button data-filter="housing" class="filter-chip">Housing</button>
+            <button data-filter="education" class="filter-chip">Education</button>
+            <input type="text" id="story-search" placeholder="Search stories..." class="story-search-input">
+        </div>
+        <div class="story-gallery" id="story-gallery">
+            <!-- Story Card Example -->
+            <div class="story-card fade-in" data-category="food">
+                <div class="story-card-inner">
+                    <div class="story-card-front">
+                        <img src="images/story2.jpg" alt="Family receiving food assistance">
+                        <div class="story-info">
+                            <h3>Nourishing Hope: The ABC Communities</h3>
+                            <p>Food support for a communities in need.</p>
+                        </div>
+                    </div>
+                    <div class="story-card-back">
+                        <div class="story-impact">
+                            <h3>Impact</h3>
+                            <p>Provided over <span class="counter" data-target="500">0</span> meals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Duplicate for Housing and Education stories -->
+            <div class="story-card fade-in" data-category="housing">
+                <div class="story-card-inner">
+                    <div class="story-card-front">
+                        <img src="images/story1.jpg" alt="Housing assistance success story">
+                        <div class="story-info">
+                            <h3>A Safe Haven: The XYS's New Beginning</h3>
+                            <p>Housing assistance success story.</p>
+                        </div>
+                    </div>
+                    <div class="story-card-back">
+                        <div class="story-impact">
+                            <h3>Impact</h3>
+                            <p>Secured housing for <span class="counter" data-target="20">0</span> families.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="story-card fade-in" data-category="education">
+                <div class="story-card-inner">
+                    <div class="story-card-front">
+                        <img src="images/story3.jpg" alt="Education support program highlights">
+                        <div class="story-info">
+                            <h3>Building Bright Futures</h3>
+                            <p>Education support program highlights.</p>
+                        </div>
+                    </div>
+                    <div class="story-card-back">
+                        <div class="story-impact">
+                            <h3>Impact</h3>
+                            <p><span class="counter" data-target="100">0</span>+ children received school supplies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br><br><br><br><br><br><br>
+
+    <!-- Team Section -->
+<section id="team">
+<div id="team-carousel-container" class="carousel-container">
+    <h1 class="carousel-title">OUR TEAM</h1>
+    <div class="carousel-wrapper">
+      <button id="prev-btn" class="nav-btn prev-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button id="next-btn" class="nav-btn next-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div id="cards-track" class="cards-track">
+        </div>
+    </div>
+    <div id="member-info" class="member-info">
+      <h2 id="member-name" class="member-name"></h2>
+      <p id="member-role" class="member-role"></p>
+      <p id="member-bio" class="member-bio"></p>
+    </div>
+    <div id="dots-indicator" class="dots-indicator">
+      </div>
+</div>
+</section>
+
+<!-- Our Partners Section -->
+<section id="partners" class="partners-section">
+  <h2>Our Partners</h2>
+  <div class="partners-logos">
+        <div class="partner-logo">
+      <img src="images/act.png" alt="Elias Moses">
+    </div>
+    <div class="partner-logo">
+      <img src="images/sca-logo.png" alt="SCA">
+    </div>
+        <div class="partner-logo">
+      <img src="images/mtc-logo.png" alt="MTC">
+    </div>
+    <div>
+        <div class="partner-logo">
+            <img src="images/ELECTRONICS_HUB_small-removebg-preview.png" alt="Electronics hub">
+        </div>
+    </div>
+    <div class="partner-logo">
+      <img src="images/bank-whk-logo.png" alt="Bank Windhoek">
+    </div>
+    <div class="partner-logo">
+      <img src="images/sanlam-logo.png" alt="Sanlam">
+    </div>
+    <div class="partner-logo">
+      <img src="images/toyota-logo.png" alt="Indongo Toyota">
+    </div>
+    <div class="partner-logo">
+      <img src="images/Namibia-Breweries-Limited.svg" alt="Namib Brew">
+    </div>
+  </div>
+</section>
+
+
+    <!-- Donation Section -->
+<section id="donate" class="donation-section modern">
+    <div class="container">
+        <div class="donation-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1f3b57" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3.05 1.07-4 2-0.95-0.93-2.24-2-4-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.5 4 3 5.5l7 7Z"/>
+                <path d="M12 5v3M16 5v3"/>
+                <path d="m15 16 2 2-2 2-2-2 2-2"/>
+                <path d="m9 16-2 2 2 2 2-2-2-2"/>
+            </svg>
+            <h2>Your DONATION Makes a Huge Difference</h2>
+            <p class="lead">Your support empowers Hope Haven to uplift our community. Choose how you'd like to contribute.</p>
+        </div>
+
+        <div class="donation-options modern">
+            <button class="donate-btn bank-transfer" data-info="Bank Windhoek, Acc: 1234567890, Branch: 482172">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bank">
+                    <path d="m3 6 18 0 0 12-18 0z"/>
+                    <path d="m3 10 18 0"/>
+                    <path d="m7 6 0-2"/>
+                    <path d="m17 6 0-2"/>
+                    <path d="m12 18-5 3 10 0-5-3z"/>
+                </svg>
+                Bank Transfer
+            </button>
+            <a href="https://mtc.com.na/pay" target="_blank" class="donate-btn mobile-pay">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone">
+                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+                    <path d="M12 18v4"/>
+                    <path d="M9 5h6"/>
+                </svg>
+                MTC Pay
+            </a>
+            <a href="tel:+264814131515" class="donate-btn mobile-wallet">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet">
+                    <path d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                </svg>
+                FNB eWallet
+            </a>
+            <a href="mailto:info@hopehaven.com.na?subject=Donation Inquiry" class="donate-btn email-inquiry">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                Email Inquiry
+            </a>
+        </div>
+        <div id="bank-details" class="bank-details">
+    <h3>Direct Bank Transfer Details:</h3>
+    <p id="bank-info">
+        <strong>Account Name:</strong> Hope Haven Namibia<br>
+        <strong>Bank:</strong> Bank Windhoek<br>
+        <strong>Account Number:</strong> 1234567890<br>
+        <strong>Branch Code:</strong> 482172
+    </p>
+    <button id="copy-bank" class="copy-btn">
+        Copy Details
+    </button>
+    <span id="copy-success" class="copy-success">Copied!</span>
+</div>
+
+       <p class="note">Your contribution is deeply appreciated and helps us continue our work in making a change.</p>
+    </div>
+</section>
+
+
+    <!-- Map Section -->
+    <section id="location">
+        <div class="container">
+            <h2>Our Location</h2>
+            <div id="map" style="height: 400px;"></div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container contact-container">
+        <h2>Contact & Volunteer Form</h2>
+        <p class="contact-intro">We’d love to hear from you! Fill out the form below to volunteer,for donations, ask questions, or share your story.</p>
+        <form id="contact-form" class="contact-form">
+    <div class="form-group">
+        <input type="text" id="name" required>
+        <label for="name">Full Name</label>
+    </div>
+
+    <div class="form-group">
+        <input type="email" id="email" required>
+        <label for="email">Email Address</label>
+    </div>
+
+    <div class="form-group">
+        <input type="tel" id="phone" required>
+        <label for="phone">Phone Number</label>
+    </div>
+
+    <div class="form-group">
+        <textarea id="message" rows="5" required></textarea>
+        <label for="message">Your Message</label>
+    </div>
+
+    <!-- Google reCAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="6Lf2N6crAAAAALSsAE6KFxu_F7tX1FpDtV52FeM0" style="margin: 10px 0; display: flex; justify-content: center;"></div>
+
+    <button type="submit" class="btn-submit">Send Message</button>
+    <div id="form-success" class="form-success">
+        <p>Thank you! Your message has been sent.</p>
+    </div>
+</form>
+
+<!--the reCAPTCHA script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-top">
+            <!-- About -->
+            <div class="footer-about">
+                <h3>Hope Haven</h3>
+                <p>Providing support, shelter, and hope to our community. Join us in making a difference!</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#stories">Stories</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>
+                    <strong>Email:</strong> 
+                    <a href="mailto:info@hopehaven.com.na">info@hopehaven.com.na</a>
+                </p>
+
+                <p>
+                   <strong>Phone:</strong> 
+        <a href="tel:+264814131515">+264 81 413 1515</a>
+    </p>
+    <p>
+        <strong>Location:</strong> 
+        <a href="https://www.google.com/maps?q=Windhoek,Namibia" target="_blank" rel="noopener noreferrer">
+            Windhoek, Namibia
+        </a>
+    </p>
+</div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to our newsletter for latest news and events.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p id="newsletter-success" class="newsletter-success">✅ Subscribed successfully!</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hope Haven. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+            </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button id="back-to-top">↑ Top</button>
+    </div>
+</footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
