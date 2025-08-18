@@ -1,24 +1,34 @@
 // HERO SLIDER
 const heroImages = [
-    'images/bg1.jpg',
-    'images/bg2.jpg',
-    'images/bg3.jpg',
-    'images/bg4.jpg',
-    'images/bg5.jpg'
+    'bg1.jpg',
+    'bg2.jpg',
+    'bg6.jpg',
+    'bg3.jpg',
+    'bg4.jpg',
+    'bg5.jpg',
+    'bg7.jpg',
+    'bg8.jpg'
+    
 ];
 const heroTitles = [
     'Helping People Find Hope & Home',
     'Support | Shelter | Success.',
+    'A Place to Belong. A Place to Call Home.',
     'Join Us to Make a Difference',
     'Empowering Dreams, One Step at a Time',
-    'Connecting Hearts, Building Futures'
+    'Connecting Hearts, Building Futures',
+    'Creating Brighter Futures, One Child at a Time.',
+    'Where Hope Takes Root and Futures Blossom.'
 ];
 const heroDescs = [
     'Together, we build brighter futures for our community. A place they can call Home',
     'Every act of kindness counts. Be a part of change.',
+    'We create a safe space where every person feels loved, valued, and empowered to call it home.',
     'Volunteer/Donate, and help us transform lives of our own.',
     'Building confidence, creating impact, and unlocking potential for a brighter future',
-    'Uniting people, empowering communities, and building brighter paths forward'
+    'Uniting people, empowering communities, and building brighter paths forward',
+    'We provide a nurturing environment where children are not only fed and sheltered but also empowered with the tools they need to learn, grow, and thrive, building a foundation of hope for their future.',
+    'Providing essential care and a safe haven to fostering educational opportunities and unwavering support,'
 ];
 let heroIndex = 0;
 function setHeroSlide(idx) {
@@ -508,11 +518,11 @@ backToTopBtn.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const members = [
-    { id: '1', name: 'Mr Elias', role: 'Senior Developer', image: 'images/elias.jpg', bio: 'Leads the technical development at Hope Haven, designing and maintaining innovative digital solutions that enhance our community programs and outreach initiatives.' },
-    { id: '2', name: 'Ms Hope', role: 'Operations Manager', image: 'images/ms a.jpg', bio: 'Ensures the smooth day-to-day operations of Hope Haven, coordinating resources, staff, and projects to maximize the impact of our services' },
-    { id: '3', name: 'Mr John', role: 'Volunter Manager', image: 'images/mr b.jpg', bio: 'Oversees our volunteer programs, recruiting, training, and supporting dedicated individuals who help Hope Haven bring hope and care to the community.' },
-    { id: '4', name: 'Ms Moses', role: 'Lead Marketing Strategist', image: 'images/ms.jpg', bio: 'Develops and implements marketing strategies that raise awareness about Hope Haven’s mission, engaging the community and supporters through creative campaigns.'},
-    { id: '5', name: 'Ms Doe', role: 'Chief Executive Officer', image: 'images/ms doe.jpg', bio: 'Leads Hope Haven with a vision to empower communities, providing strategic direction and inspiring initiatives that foster growth, support, and positive change.'},
+    { id: '1', name: 'Mr Elias', role: 'Senior Developer', image: 'elias.jpg', bio: 'Leads the technical development at Hope Haven, designing and maintaining innovative digital solutions that enhance our community programs and outreach initiatives.' },
+    { id: '2', name: 'Ms Hope', role: 'Operations Manager', image: 'ms a.jpg', bio: 'Ensures the smooth day-to-day operations of Hope Haven, coordinating resources, staff, and projects to maximize the impact of our services' },
+    { id: '3', name: 'Mr John', role: 'Volunter Manager', image: 'mr b.jpg', bio: 'Oversees our volunteer programs, recruiting, training, and supporting dedicated individuals who help Hope Haven bring hope and care to the community.' },
+    { id: '4', name: 'Ms Moses', role: 'Lead Marketing Strategist', image: 'ms.jpg', bio: 'Develops and implements marketing strategies that raise awareness about Hope Haven’s mission, engaging the community and supporters through creative campaigns.'},
+    { id: '5', name: 'Ms Doe', role: 'Chief Executive Officer', image: 'ms doe.jpg', bio: 'Leads Hope Haven with a vision to empower communities, providing strategic direction and inspiring initiatives that foster growth, support, and positive change.'},
   ];
 
   const cardsTrack = document.getElementById('cards-track');
@@ -637,7 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCarousel();
 });
 
-// Donation
+// Donations
 const copyBtn = document.getElementById('copy-bank');
 const bankInfo = document.getElementById('bank-info').innerText;
 const copySuccess = document.getElementById('copy-success');
