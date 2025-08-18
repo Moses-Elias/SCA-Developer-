@@ -63,6 +63,50 @@ header.scrolled .logo {
 }
 
 .logo-link img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease; /* Smooth hover */
+}
+
+.logo-link img:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.logo-link .logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ff6f61;
+  transition: color 0.3s ease;
+}
+
+.logo-link:hover .logo-text {
+  color: #e85a50; /* Subtle hover color change */
+}
+
+/* Logo */
+header .logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: #ff6f61;
+  transition: color 0.3s;
+}
+
+header.scrolled .logo {
+  color: #fff;
+}
+
+
+/* Header Logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between image and text */
+  text-decoration: none; /* Removes the underline from the link */
+}
+
+.logo-link img {
   height: 60px; /* Adjust size */
   width: auto;
   transition: transform 0.3s ease; /* Smooth hover */
@@ -82,6 +126,19 @@ header.scrolled .logo {
 .logo-link:hover .logo-text {
   color: #e85a50; /* Subtle hover color change */
 }
+
+/* For mobile, keep spacing consistent */
+@media (max-width: 768px) {
+  header .container {
+    justify-content: flex-start; /* logo and hamburger stay together on left */
+    gap: 12px; /* spacing between hamburger and logo */
+  }
+
+  .logo {
+    margin-left: 5px;
+  }
+}
+
 
 
 
@@ -136,7 +193,7 @@ header.scrolled nav ul li a {
 #hamburger .bar {
     height: 3px;
     width: 100%;
-    background: #ff6f61;
+    background: #312eff;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
@@ -170,7 +227,7 @@ header.scrolled nav ul li a {
     }
 
     header nav ul.open {
-        right: 0;
+        left: 0;
     }
 
     header nav ul li a {
@@ -923,7 +980,7 @@ body {
 }
 
 .partner-logo img {
-  width: 135px;
+  width: 150px;
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -1144,7 +1201,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 10px;
     outline: none;
-    font-size: 0.5rem;
+    font-size: 0.95rem;
     transition: 0.3s;
     background: #fdfdfd;
 }
@@ -1328,31 +1385,12 @@ footer {
 
 
 #back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    padding: 0.75rem 1rem;
-    border-radius: 50%;
-    border: none;
-    background: #ff6f61;
-    color: #fff;
-    cursor: pointer;
-    display: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-#back-to-top:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255,111,97,0.4);
-}
-
-
-/* Advanced Back-to-top Button */
-#back-to-top {
+    /* Base position and styling */
     position: fixed;
     right: 30px;
-    bottom: 30px;
+    bottom: 60px; /* Moved up from 30px to be "a bit above" */
+    
+    /* Button appearance */
     background: #ff6f61;
     color: #fff;
     border: none;
@@ -1363,11 +1401,13 @@ footer {
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    
+    /* Visibility and animation */
     opacity: 0;
     pointer-events: none;
     z-index: 1000;
     transition: opacity 0.4s, transform 0.4s, background 0.3s;
-    display: flex;
+    display: flex; /* Ensures content is properly centered */
     align-items: center;
     justify-content: center;
     gap: 0.5em;
@@ -1381,11 +1421,19 @@ footer {
 }
 
 #back-to-top:hover {
-    background: #e85c50;
-    transform: translateY(0);
+   background: #c65147; /* A slightly darker shade of your primary color */
+   box-shadow: 0 8px 20px rgba(255,111,97,0.4); /* Keep the shadow if you like */
 }
 
-/* icon and label for back-to-top */
+
+/* Visibility classes, using JavaScript to toggle */
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Ensure the icon and label are styled correctly */
 #back-to-top .btt-icon {
     display: flex;
     align-items: center;
@@ -1406,69 +1454,22 @@ footer {
     transition: transform 0.3s;
 }
 
-#back-to-top:hover .btt-icon {
-    transform: translateY(-4px) scale(1.08);
-}
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 900px) {
-    .counters {
-        flex-direction: column;
-        align-items: center;
-    }
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-    .story-gallery {
-        grid-template-columns: 1fr;
-    }
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 1rem;
-    }
-    header nav ul {
-        gap: 1rem;
-    }
-    #hero h1 {
-        font-size: 2.2rem;
-    }
-    #hero p {
-        font-size: 1.05rem;
-    }
-}
-
+/* Mobile Optimization */
 @media (max-width: 600px) {
-    #hero h1 {
-        font-size: 1.3rem;
-    }
-    #hero p {
-        font-size: 0.95rem;
-    }
-    section {
-        padding: 1.2rem 0.3rem;
-    }
-    .container {
-        padding: 0 0.3rem;
-    }
-    #back-to-top {
-        right: 10px;
-        bottom: 10px;
-        min-width: 50px;
-        height: 32px;
-        font-size: 0.85em;
-    }
+  #back-to-top {
+    right: 12px;
+    bottom: 16px;
+    width: 55px;
+    height: 55px;
+  }
+
+  #back-to-top i {
+    font-size: 18px;
+  }
 }
+
+
 
 
 /* --- Advanced Carousel Styles --- */
@@ -1731,4 +1732,14 @@ footer {
   }
 }
 
+/*Developed by*/
 
+.developer-credit {
+  text-decoration: none; 
+  color: #888; /* Initial color */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.developer-credit:hover {
+  color: red; /* Change to red on hover */
+}
